@@ -11,9 +11,16 @@ public class HealthScript : MonoBehaviour
 
     public bool isPlayer;
 
+    private HealthUI healthUI;
+
     private void Awake()
     {
         animationScript = GetComponentInChildren<CharacterAnimation>();
+
+        if (isPlayer)
+        {
+            healthUI = GetComponent<HealthUI>();
+        }
     }
 
     public void ApplyDamage(float damage, bool knockDown)
@@ -24,6 +31,11 @@ public class HealthScript : MonoBehaviour
         }
 
         health -= damage;
+
+        if (isPlayer)
+        {
+            healthUI.DisplayHealth(health);
+        }
 
         if (health <= 0f)
         {
