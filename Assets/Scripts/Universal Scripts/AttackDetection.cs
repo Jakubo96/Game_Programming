@@ -48,6 +48,11 @@ public class AttackDetection : MonoBehaviour
             }
         }
 
+        if (isEnemy)
+        {
+            hits[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
+        }
+
         gameObject.SetActive(false);
     }
 }

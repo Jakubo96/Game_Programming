@@ -495,6 +495,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2385898230108100747, guid: 6e2e57463012e0a41930e9cfe1311ea6,
+        type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e2e57463012e0a41930e9cfe1311ea6, type: 3}
 --- !u!1001 &7755219477616800317
@@ -563,6 +568,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155761033074432254, guid: e3f9f5e7b56a3ae4bad906d319866145,
+        type: 3}
+      propertyPath: chasePlayerAfterAttack
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3f9f5e7b56a3ae4bad906d319866145, type: 3}
