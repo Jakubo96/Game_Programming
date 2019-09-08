@@ -23,6 +23,7 @@ public class AttackDetection : MonoBehaviour
         
         if(hits.Length > 0)
         {
+            gameObject.SetActive(false);
         }
     }
 }
