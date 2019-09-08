@@ -42,7 +42,7 @@ public class Tags
     public const string LEFT_ARM_TAG = "Left Arm";
     public const string LEFT_LEG__TAG = "Left Leg";
     public const string UNTAGGED_TAG = "Untagged";
-    public const string MAIN_CAMERA_TAG = "Main Camera";
+    public const string MAIN_CAMERA_TAG = "MainCamera";
     public const string HEALTH_UI = "Health UI";
 }
 
