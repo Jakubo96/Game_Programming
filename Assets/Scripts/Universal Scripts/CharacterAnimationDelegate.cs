@@ -13,9 +13,25 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
     private CharacterAnimation animationScript;
 
+    private AudioSource audioSource;
+    
+    [SerializeField] private AudioClip whooshSound;
+    [SerializeField] private AudioClip fallSound;
+    [SerializeField] private AudioClip groundHitSound;
+    [SerializeField] private AudioClip deathSound;
+
+    private EnemyMovement enemyMovement;
+
     private void Awake()
     {
         animationScript = GetComponent<CharacterAnimation>();
+
+        audioSource = GetComponent<AudioSource>();
+
+        if (gameObject.CompareTag(Tags.ENEMY_TAG))
+        {
+            enemyMovement = GetComponentInParent<EnemyMovement>();
+        }
     }
 
     void LeftArmAttackOn()
@@ -29,8 +45,8 @@ public class CharacterAnimationDelegate : MonoBehaviour
         {
             leftArmAttackPoint.SetActive(false);
         }
-    }   
-    
+    }
+
     void RightArmAttackOn()
     {
         rightArmAttackPoint.SetActive(true);
@@ -42,8 +58,8 @@ public class CharacterAnimationDelegate : MonoBehaviour
         {
             rightArmAttackPoint.SetActive(false);
         }
-    }    
-    
+    }
+
     void LeftLegAttackOn()
     {
         leftLegAttackPoint.SetActive(true);
@@ -55,8 +71,8 @@ public class CharacterAnimationDelegate : MonoBehaviour
         {
             leftLegAttackPoint.SetActive(false);
         }
-    }   
-    
+    }
+
     void RightLegAttackOn()
     {
         rightLegAttackPoint.SetActive(true);
@@ -73,18 +89,18 @@ public class CharacterAnimationDelegate : MonoBehaviour
     void TagLeftArm()
     {
         leftArmAttackPoint.tag = Tags.LEFT_ARM_TAG;
-    }  
-    
+    }
+
     void UnTagLeftArm()
     {
         leftArmAttackPoint.tag = Tags.UNTAGGED_TAG;
-    }  
-    
+    }
+
     void TagLeftLeg()
     {
         leftLegAttackPoint.tag = Tags.LEFT_LEG__TAG;
-    }  
-    
+    }
+
     void UnTagLeftLeg()
     {
         leftLegAttackPoint.tag = Tags.UNTAGGED_TAG;
@@ -99,5 +115,45 @@ public class CharacterAnimationDelegate : MonoBehaviour
     {
         yield return new WaitForSeconds(standUpTimer);
         animationScript.StandUp();
+    }
+
+    void AttackSound()
+    {
+        audioSource.volume = 0.2f;
+        audioSource.clip = whooshSound;
+        audioSource.Play();
+    }
+
+    void DeathSound()
+    {
+        audioSource.volume = 1f;
+        audioSource.clip = deathSound;
+        audioSource.Play();
+    }   
+    
+    void KnockDownSound()
+    {
+        audioSource.clip = fallSound;
+        audioSource.Play();
+    }    
+    
+    void HitGroundSound()
+    {
+        audioSource.clip = groundHitSound;
+        audioSource.Play();
+    }
+
+    void DisableMovement()
+    {
+        enemyMovement.enabled = false;
+
+        transform.parent.gameObject.layer = 0;
+    }
+
+    void EnableMovement()
+    {
+        enemyMovement.enabled = true;
+
+        transform.parent.gameObject.layer = 10;
     }
 }

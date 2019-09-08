@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Left Arm
   - Left Leg
+  - Enemy
   layers:
   - Default
   - TransparentFX
