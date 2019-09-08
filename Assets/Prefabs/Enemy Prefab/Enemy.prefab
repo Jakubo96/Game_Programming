@@ -12,6 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5db97af07e76e4288745a125f99fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &50405600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755219478022546368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f12e0ef07f52c42820c5dbb5449137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftArmAttackPoint: {fileID: 0}
+  rightArmAttackPoint: {fileID: 0}
+  leftLegAttackPoint: {fileID: 0}
+  rightLegAttackPoint: {fileID: 0}
+  standUpTimer: 2
 --- !u!1 &7755219478911605006
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,6 +41,7 @@ GameObject:
   - component: {fileID: 1430088500}
   - component: {fileID: 1430088501}
   - component: {fileID: 8155761033074432254}
+  - component: {fileID: 8896528815912478039}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
@@ -92,6 +110,20 @@ MonoBehaviour:
   attackDistance: 1.3
   chasePlayerAfterAttack: 1
   defaultAttackTime: 2
+--- !u!114 &8896528815912478039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755219478911605006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6fe11f64c233e541bb76a76348e925b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isPlayer: 0
 --- !u!1001 &7755219478022514016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -147,10 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 997c749f707253740af321b7bcc545bd, type: 2}
     - target: {fileID: 400002, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0.49999967
@@ -167,6 +195,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.05504989
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 997c749f707253740af321b7bcc545bd, type: 2}
     - target: {fileID: 13700000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEditor.Timeline;
-using UnityEngine;
-using Random = System.Random;
+﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -83,7 +80,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (currentAttackTime > defaultAttackTime)
         {
-            enemyAnim.EnemyAttack(UnityEngine.Random.Range(EnemyAttacks.MIN_ATTACk, EnemyAttacks.MAX_ATTACk));
+            enemyAnim.EnemyAttack(Random.Range(EnemyAttacks.MIN_ATTACK, EnemyAttacks.MAX_ATTACK));
 
             currentAttackTime = 0f;
         }

@@ -40,11 +40,11 @@ public class AttackDetection : MonoBehaviour
 
             if (gameObject.CompareTag(Tags.LEFT_ARM_TAG) || gameObject.CompareTag(Tags.LEFT_LEG__TAG))
             {
-//                hits[0].GetComponent<HealthScript>().ApplyDamage(damage, true);
+                hits[0].GetComponent<HealthScript>().ApplyDamage(damage, true);
             }
             else
             {
-//                hits[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
+                hits[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
             }
         }
 

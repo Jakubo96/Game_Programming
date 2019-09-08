@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 public class CharacterAnimationDelegate : MonoBehaviour
 {
@@ -6,6 +8,15 @@ public class CharacterAnimationDelegate : MonoBehaviour
     public GameObject rightArmAttackPoint;
     public GameObject leftLegAttackPoint;
     public GameObject rightLegAttackPoint;
+
+    public float standUpTimer = 2f;
+
+    private CharacterAnimation animationScript;
+
+    private void Awake()
+    {
+        animationScript = GetComponent<CharacterAnimation>();
+    }
 
     void LeftArmAttackOn()
     {
@@ -57,5 +68,36 @@ public class CharacterAnimationDelegate : MonoBehaviour
         {
             rightLegAttackPoint.SetActive(false);
         }
+    }
+
+    void TagLeftArm()
+    {
+        leftArmAttackPoint.tag = Tags.LEFT_ARM_TAG;
+    }  
+    
+    void UnTagLeftArm()
+    {
+        leftArmAttackPoint.tag = Tags.UNTAGGED_TAG;
+    }  
+    
+    void TagLeftLeg()
+    {
+        leftLegAttackPoint.tag = Tags.LEFT_LEG__TAG;
+    }  
+    
+    void UnTagLeftLeg()
+    {
+        leftLegAttackPoint.tag = Tags.UNTAGGED_TAG;
+    }
+
+    void EnemyStandUp()
+    {
+        StartCoroutine(StandUpAfterTime());
+    }
+
+    IEnumerator StandUpAfterTime()
+    {
+        yield return new WaitForSeconds(standUpTimer);
+        animationScript.StandUp();
     }
 }

@@ -15,8 +15,8 @@
     
     public const string IDLE_ANIMATION = "Idle";
     
-    public const string KNOCK_DOWN_TRIGGER = "Knock Down";
-    public const string STAND_UP_TRIGGER = "Stand Up";
+    public const string KNOCK_DOWN_TRIGGER = "KnockDown";
+    public const string STAND_UP_TRIGGER = "StandUp";
     public const string HIT_RIGGER = "Hit";
     public const string DEATH_TRIGGER = "Death";
 }
@@ -39,8 +39,8 @@ public class Tags
     public const string PLAYER_TAG = "Player";
     public const string ENEMY_TAG = "Enemy";
     
-    public const string LEFT_ARM_TAG = "LeftArm";
-    public const string LEFT_LEG__TAG = "LeftLeg";
+    public const string LEFT_ARM_TAG = "Left Arm";
+    public const string LEFT_LEG__TAG = "Left Leg";
     public const string UNTAGGED_TAG = "Untagged";
     public const string MAIN_CAMERA_TAG = "Main Camera";
     public const string HEALTH_UI = "Health UI";
@@ -48,6 +48,6 @@ public class Tags
 
 public class EnemyAttacks
 {
-    public const int MIN_ATTACk = 0;
-    public const int MAX_ATTACk = 3;
+    public const int MIN_ATTACK = 0;
+    public const int MAX_ATTACK = 3;
 }
