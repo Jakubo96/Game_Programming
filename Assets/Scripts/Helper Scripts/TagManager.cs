@@ -45,3 +45,9 @@ public class Tags
     public const string MAIN_CAMERA_TAG = "Main Camera";
     public const string HEALTH_UI = "Health UI";
 }
+
+public class EnemyAttacks
+{
+    public const int MIN_ATTACk = 0;
+    public const int MAX_ATTACk = 3;
+}
