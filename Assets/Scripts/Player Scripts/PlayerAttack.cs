@@ -17,14 +17,14 @@ public class PlayerAttack : MonoBehaviour
 
     void ComboAttacks()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(Buttons.PUNCH_1_BUTTON))
         {
-            playerAnim.Punch_1();       
-        }    
-        
-        if (Input.GetKeyDown(KeyCode.X))
+            playerAnim.Punch1();
+        }
+
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(Buttons.KICK_1_BUTTON))
         {
-            playerAnim.Kick_1();       
-        }   
+            playerAnim.Kick1();
+        }
     }
 }

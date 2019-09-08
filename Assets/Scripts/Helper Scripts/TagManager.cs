@@ -27,6 +27,12 @@ public class Axis
     public const string VERTICAL_AXIS = "Vertical";
 }
 
+public class Buttons
+{
+    public const string PUNCH_1_BUTTON = "joystick button 2";
+    public const string KICK_1_BUTTON = "joystick button 3";
+}
+
 public class Tags
 {
     public const string GROUND_TAG = "Ground";

@@ -14,27 +14,27 @@ public class CharacterAnimation : MonoBehaviour
         anim.SetBool(AnimationTags.MOVEMENT, move);
     }
 
-    public void Punch_1()
+    public void Punch1()
     {
         anim.SetTrigger(AnimationTags.PUNCH_1_TRIGGER);
     }
     
-    public void Punch_2()
+    public void Punch2()
     {
         anim.SetTrigger(AnimationTags.PUNCH_2_TRIGGER);
     }
     
-    public void Punch_3()
+    public void Punch3()
     {
         anim.SetTrigger(AnimationTags.PUNCH_3_TRIGGER);
     }
     
-    public void Kick_1()
+    public void Kick1()
     {
         anim.SetTrigger(AnimationTags.KICK_1_TRIGGER);
     }
     
-    public void Kick_2()
+    public void Kick2()
     {
         anim.SetTrigger(AnimationTags.KICK_2_TRIGGER);
     }
