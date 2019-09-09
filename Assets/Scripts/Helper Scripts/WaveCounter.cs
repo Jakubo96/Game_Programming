@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveCounter : MonoBehaviour
 {
@@ -7,12 +8,15 @@ public class WaveCounter : MonoBehaviour
     private int enemiesKilled = 0;
     private int currentWave = 1;
 
+    private Text scoreText;
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
+        scoreText = GameObject.FindWithTag(Tags.SCORE).GetComponent<Text>();
     }
 
     public void EnemyKilled()
@@ -20,6 +24,7 @@ public class WaveCounter : MonoBehaviour
         if (IsWaveFinished(++enemiesKilled))
         {
             StartCoroutine(EnemyManager.instance.SpawnEnemies(++currentWave));
+            scoreText.text = string.Format("Fala: {0}", currentWave);
         }
     }
 
