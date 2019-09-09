@@ -173,7 +173,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
     void DeactivateGameObject()
     {
-        EnemyManager.instance.EnemyKilled();
+        WaveCounter.instance.EnemyKilled();
         
         gameObject.SetActive(false);
     }

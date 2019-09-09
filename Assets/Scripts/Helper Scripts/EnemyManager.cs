@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
-
-    private int enemiesKilled = 0;
-    private int currentWave = 1;
 
     [SerializeField] private GameObject enemyPrefab;
 
@@ -24,34 +20,7 @@ public class EnemyManager : MonoBehaviour
         SpawnEnemy();
     }
 
-    public void EnemyKilled()
-    {
-        if (IsWaveFinished(++enemiesKilled))
-        {
-            ++currentWave;
-            StartCoroutine(SpawnEnemies());
-        }
-    }
-
-    private bool IsWaveFinished(int count)
-    {
-        var i = 0;
-        var numberToAdd = 1;
-        while (i <= count)
-        {
-            if (i == count)
-            {
-                return true;
-            }
-
-            i += numberToAdd;
-            numberToAdd += 1;
-        }
-
-        return false;
-    }
-
-    private IEnumerator SpawnEnemies()
+    public IEnumerator SpawnEnemies(int currentWave)
     {
         for (var i = 0; i < currentWave; ++i)
         {
