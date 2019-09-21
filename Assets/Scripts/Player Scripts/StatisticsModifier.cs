@@ -26,12 +26,10 @@ public class StatisticsModifier : MonoBehaviour
     {
         if(Random.Range(0,2) > 0)
         {
-            print("Increase damage");
             IncreasePlayerDamage();
         }
         else
         {
-            print("Increase speed");
             IncreasePlayerSpeed();
         }
     }
