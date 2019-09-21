@@ -45,6 +45,7 @@ public class Tags
     public const string MAIN_CAMERA_TAG = "MainCamera";
     public const string HEALTH_UI = "Health UI";
     public const string SCORE = "Score";
+    public const string FINAL_SCORE = "Final Score";
 }
 
 public class EnemyAttacks

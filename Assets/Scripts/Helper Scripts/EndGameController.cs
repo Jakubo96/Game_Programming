@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EndGameController : MonoBehaviour
 {
@@ -19,9 +20,10 @@ public class EndGameController : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ShowDeathScreen()
+    public void ShowDeathScreen(int wave)
     {
         gameObject.SetActive(true);
+        GameObject.FindWithTag(Tags.FINAL_SCORE).GetComponent<Text>().text = string.Format("Fala: {0}", wave);
     }
 
     public void EndGame()

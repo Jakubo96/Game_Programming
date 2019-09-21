@@ -49,4 +49,9 @@ public class WaveCounter : MonoBehaviour
 
         return false;
     }
+
+    public void GameOver()
+    {
+        EndGameController.instance.ShowDeathScreen(currentWave);
+    }
 }
