@@ -21,8 +21,12 @@ public class WaveCounter : MonoBehaviour
 
     public void EnemyKilled()
     {
+        StatisticsModifier.instance.IncreasePlayerStats();
+        
         if (IsWaveFinished(++enemiesKilled))
         {
+            StatisticsModifier.instance.HealPlayer();
+            
             StartCoroutine(EnemyManager.instance.SpawnEnemies(++currentWave));
             scoreText.text = string.Format("Fala: {0}", currentWave);
         }
